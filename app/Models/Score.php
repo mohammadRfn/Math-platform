@@ -6,5 +6,19 @@ use Illuminate\Database\Eloquent\Model;
 
 class Score extends Model
 {
-    //
+    protected $fillable = [
+        'user_id',
+        'challenge_id',
+        'points',
+    ];
+
+    public function user()
+    {
+        return $this->belongsTo(User::class);
+    }
+
+    public function challenge()
+    {
+        return $this->belongsTo(Challange::class);
+    }
 }
