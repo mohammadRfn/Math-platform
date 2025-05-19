@@ -8,7 +8,7 @@ class Score extends Model
 {
     protected $fillable = [
         'user_id',
-        'challenge_id',
+        'challange_id',
         'points',
     ];
 
