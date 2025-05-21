@@ -19,6 +19,8 @@ class User extends Authenticatable implements JWTSubject
      *
      * @var list<string>
      */
+    protected $guard_name = 'api';
+
     public function getJWTIdentifier()
     {
         return $this->getKey();
@@ -81,4 +83,5 @@ class User extends Authenticatable implements JWTSubject
             ->withPivot('score')
             ->withTimestamps();
     }
+    
 }
