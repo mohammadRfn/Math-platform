@@ -30,4 +30,9 @@ class ChallangeService
         $challange->delete();
         return true;
     }
+
+    public function findById($id, $tenantId)
+    {
+        return Challange::where('tenant_id', $tenantId)->findOrFail($id);
+    }
 }

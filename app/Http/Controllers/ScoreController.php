@@ -17,6 +17,9 @@ class ScoreController extends Controller
 
     public function store(StoreScoreRequest $request, $challangeId)
     {
+        if (!$request->user()->can('manage scores')) {
+            return response()->json(['error' => 'Forbidden'], 403);
+        }
         $user = $request->user();
         $score = $this->scoreService->storeOrUpdate($user->id, $challangeId, $request->validated()['points'], $user->tenant_id);
         return response()->json($score);
