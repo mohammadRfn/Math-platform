@@ -118,6 +118,9 @@ return [
             'database' => env('DB_MONGO_DATABASE', 'math_platform'),
             'username' => env('DB_MONGO_USERNAME'),
             'password' => env('DB_MONGO_PASSWORD'),
+            'options' => [
+                'database' => env('DB_MONGO_AUTHENTICATION_DATABASE', 'admin'),
+            ],
         ],
 
     ],
