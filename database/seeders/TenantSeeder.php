@@ -13,7 +13,7 @@ class TenantSeeder extends Seeder
      */
     public function run(): void
     {
-        DB::table('tenant')->insert([
+        DB::table('tenants')->insert([
             [
                 'name' => 'Tenant 1',
                 'domain' => 'tenant1.example.com',
