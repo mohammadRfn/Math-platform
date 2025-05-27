@@ -33,6 +33,10 @@ Route::middleware('auth:api')->group(function () {
         Route::post('/{id}/participate', [ChallangeController::class, 'participate']);
     });
 
+    Route::prefix('questions')->group(function () {
+        Route::get('/', [\App\Http\Controllers\QuestionController::class, 'index']);
+    });
+
     Route::prefix('scores')->group(function () {
         Route::post('/{challangeId}', [ScoreController::class, 'store']);
     });
